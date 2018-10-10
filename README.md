@@ -77,5 +77,5 @@ Search for movie through omdb to find:
  ----
 ## Functionality Video Tutorial :
 
-[![alt text](https://drive.google.com/open?id=14_6HesPJV82fjw6ciuz_2AyOMTI_7NBo)](https://drive.google.com/open?id=1whI3X6_0BcxEg2xLA4TDSGWPa-O6rwNP "Tutorial")
+[![TUTORIAL LINK]](https://drive.google.com/open?id=1whI3X6_0BcxEg2xLA4TDSGWPa-O6rwNP "Tutorial")
 
