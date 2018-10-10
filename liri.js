@@ -54,14 +54,23 @@ function movie(){
     if (error) {
       return console.log('Error occurred: ' + err);
     }
+    console.log("");
     console.log("Title: " + JSON.parse(body).Title);
+    console.log("");
     console.log("Year: " + JSON.parse(body).Year);
-    console.log("Rated: " + JSON.parse(body).Rated);
+    console.log("");
+    console.log("Rated: " + JSON.parse(body).imdbRating);
+    console.log("");
     console.log("Rotten Tomatoes Score: " + JSON.parse(body).Ratings[1].Value);
+    console.log("");
     console.log("Produced in: " + JSON.parse(body).Country);
+    console.log("");
     console.log("Language: " + JSON.parse(body).Language);
+    console.log("");
     console.log("Plot: " + JSON.parse(body).Plot);
+    console.log("");
     console.log("Actors: " + JSON.parse(body).Actors);
+    console.log(`------------------`);
   })}
   else {
   request("http://www.omdbapi.com/?t=" + thing + "&y=&plot=short&apikey=trilogy", function (error, response, body) {
@@ -70,14 +79,23 @@ function movie(){
     if (error) {
       return console.log('Error occurred: ' + err);
     }
+    console.log("");
     console.log("Title: " + JSON.parse(body).Title);
+    console.log("");
     console.log("Year: " + JSON.parse(body).Year);
-    console.log("Rated: " + JSON.parse(body).Rated);
+    console.log("");
+    console.log("Imdb Rated: " + JSON.parse(body).imdbRating);
+    console.log("");
     console.log("Rotten Tomatoes Score: " + JSON.parse(body).Ratings[1].Value);
+    console.log("");
     console.log("Produced in: " + JSON.parse(body).Country);
+    console.log("");
     console.log("Language: " + JSON.parse(body).Language);
+    console.log("");
     console.log("Plot: " + JSON.parse(body).Plot);
+    console.log("");
     console.log("Actors: " + JSON.parse(body).Actors);
+    console.log(`-----------------`);
 
   })};
 
@@ -87,7 +105,6 @@ function spotify(){
   const Spotify = require('node-spotify-api');
 
   const spotify = new Spotify(keys.spotify);
-  console.log(thing);
   
   if (thing === "") {
     spotify.search({
@@ -98,7 +115,7 @@ function spotify(){
       if (err) {
         return console.log('Error occurred: ' + err);
       }
-
+      console.log("")
       console.log("Artist(s) : " + JSON.stringify(data.tracks.items[0].album.artists[0].name, null, 2));
       console.log("Song : " + JSON.stringify(data.tracks.items[0].name, null, 2));
       console.log("Link : " + JSON.stringify(data.tracks.items[0].external_urls.spotify, null, 2));
@@ -114,11 +131,15 @@ function spotify(){
     if (err) {
       return console.log('Error occurred: ' + err);
     }
-
+    console.log("");
     console.log("Artist(s) : " + JSON.stringify(data.tracks.items[0].album.artists[0].name, null, 2));
+    console.log("");
     console.log("Song : " + JSON.stringify(data.tracks.items[0].name, null, 2));
+    console.log("");
     console.log("Link : " + JSON.stringify(data.tracks.items[0].external_urls.spotify, null, 2));
+    console.log("");
     console.log("Album : " + JSON.stringify(data.tracks.items[0].album.name, null, 2));
+    console.log(`------------------`);
   })} 
 }
 // bandsintownfucntion
@@ -133,8 +154,8 @@ function bands(){
     if (error) return console.log(error);
     
     for (var i = 0; i < data.body.length; i++) {
-      console.log("")
-      console.log(data.body[i].venue.name)
+      console.log("");
+      console.log(data.body[i].venue.name);
       console.log(
         data.body[i].venue.city +
         (data.body[i].venue.region ? ", " + data.body[i].venue.region : "") +
@@ -143,6 +164,7 @@ function bands(){
       let dt = data.body[i].datetime.split("T");
       // moment().format();
       console.log(dt[0]);
+      console.log(`------------------`);
     }
   })
 }
